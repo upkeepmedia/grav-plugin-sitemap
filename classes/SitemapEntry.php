@@ -7,6 +7,7 @@ class SitemapEntry
     public $lang;
     public $translated = false;
     public $location;
+    public $parent;
     public $lastmod;
     public $changefreq;
     public $priority;

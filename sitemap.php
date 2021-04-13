@@ -166,7 +166,7 @@ class SitemapPlugin extends Plugin
         $route = $this->config->get('plugins.sitemap.route');
 
         if (is_null($page) || $page->route() !== $route) {
-            $extension = $this->grav['uri']->extension() ?? 'xml';
+            $extension = $this->grav['uri']->extension() ?? 'html';
 
             // set a dummy page
             $page = new Page;
@@ -267,6 +267,7 @@ class SitemapPlugin extends Plugin
                 $lang_route = [
                     'title' => $page->title(),
                     'route' => $page_route,
+                    'parent' => $page->parent(),
                     'lang' => $lang,
                     'translated' => in_array($lang, $page_languages),
                     'location' => $location,

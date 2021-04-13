@@ -1,0 +1,22 @@
+{% extends 'partials/inner-pages.html.twig' %}
+{% block main_content %}
+<div class="{{body_classes}} content">
+
+<h2>Pages</h2>
+    <ul>
+    {% for entry in sitemap if entry.parent.template != "blog" %}
+        <li><a class="" href="{{ entry.location }}">{{entry.title|e}}</a></li>
+    {% endfor %}
+    </ul>
+
+{% if page.find('/blog').published %}
+<h2>Blog Posts</h2>
+    <ul>
+    {% for entry in sitemap if entry.parent.template == "blog" %}
+        <li><a class="" href="{{ entry.location }}">{{entry.title|e}}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}
+</div>
+{% endblock %}
+

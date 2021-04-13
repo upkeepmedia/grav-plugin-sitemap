@@ -1,3 +1,4 @@
 ---
 title: Sitemap
+sidebar: left
 ---
